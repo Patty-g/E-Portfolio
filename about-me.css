@@ -90,6 +90,10 @@ hr{
     padding: 20px;
 }
 
+.about-me-wrap h3{
+	font-weight:bolder;
+}
+
 
 .about-me {
     display: flex;
