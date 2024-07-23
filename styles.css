@@ -1,0 +1,108 @@
+/* Base Styles */
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section Styles */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    background-color: black; /* Black background */
+    width: 100%; /* Ensure full width */
+    height: 100vh; /* Ensure height of 100vh */
+    transition: height 0.3s ease-in-out;
+    cursor: default;
+    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.cutout-text,
+.cutout-text2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 8rem;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    position: absolute;
+    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.cutout-text p,
+.cutout-text2 p {
+    font-size: 2rem;
+    margin-top: 1rem;
+    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+/* Lottie Animation Styles */
+#lottie-scroll {
+    position: absolute;
+    bottom: 20px; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    filter: brightness(2); /* Increase brightness to make it appear more white */
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1024px) {
+    .cutout-text h1,
+    .cutout-text2 h1 {
+        font-size: 6rem;
+    }
+
+    .cutout-text p,
+    .cutout-text2 p {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cutout-text h1,
+    .cutout-text2 h1 {
+        font-size: 4rem;
+    }
+
+    .cutout-text p,
+    .cutout-text2 p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cutout-text h1,
+    .cutout-text2 h1 {
+        font-size: 2.5rem;
+    }
+
+    .cutout-text p,
+    .cutout-text2 p {
+        font-size: 1rem;
+    }
+}
+

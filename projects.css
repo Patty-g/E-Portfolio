@@ -1,0 +1,121 @@
+.portfolio-section{
+    height: 100dvh;
+}
+
+
+.scroll-section{
+    height: 60dvh;
+}
+
+.scroll-container {
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    display: flex;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+.scroll-item {
+    scroll-snap-align: center;
+    max-width: 100%;
+    cursor: pointer;
+    height: 100%;
+    width: 30%;
+    max-width: 90%;
+    max-height: 80dvh;
+    min-width: 300px;
+}
+.arrow {
+    cursor: pointer;
+    background-color: #ffffff00;
+    border: 2px white solid;
+    filter: drop-shadow(0px 0px 4px white);
+    transition: all .3s ease;
+}
+
+.arrow-cont{
+    background: linear-gradient(90deg, #000000b5, #00000000);
+    padding: 20px;
+    
+    transition: opacity 0.3s ease-in-out;
+    
+}
+
+.arrow-cont.right-0{
+    background: linear-gradient(270deg, #000000b5, #00000000);
+}
+
+.arrow:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    scale: 1.1;
+
+    .arrow-svg{
+        color: black;
+    }
+
+}
+.overlay {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.scroll-item:hover .overlay {
+    opacity: 1;
+}
+.tag-div {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    margin: 1rem;
+    z-index: 10;
+}
+
+.hint{
+    text-align: center;
+    color: #a5a5a5;
+}
+
+.hint-container{
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.lottie-swipe {
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+    filter: opacity(0.2); /* Increase brightness to make it appear more white */
+    transition: opacity 0.3s ease;
+}
+
+.swipe-flip{
+    transform: rotate(180deg);
+}
+
+.badge{
+    font-size: 14px;
+    padding: 8px;
+    background-color: #e1e1e1ab;
+    color: black;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (max-width: 750px) {
+    .arrow{
+        display: none;
+    }
+    
+    .hint-container{
+        display:flex;
+    }
+
+    .arrow-cont{
+        display: none;
+    }
+    
+}

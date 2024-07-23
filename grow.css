@@ -1,0 +1,63 @@
+/* Grow functionality styles */
+.expandable {
+    cursor: pointer;
+    border-radius: 16px;
+    transition: all 0.5s ease-in-out, opacity 0.5s;
+}
+
+.expanded {
+    position: fixed !important;
+    backdrop-filter: blur(15px) !important;
+    z-index: 9999 !important;
+    transition: all 0.5s ease-in-out, width 1s ease, height 1s ease, top 1s ease, left 1s ease;
+    opacity: 1 !important;
+    max-height: none !important;
+    overflow-y: scroll !important;
+}
+
+.expanded::-webkit-scrollbar {
+    display: none !important;
+}
+
+.expanded .about-me-wrap {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 2s ease;
+    display: none;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.glassy-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    z-index: 9998; /* Slightly lower than the expanded clone */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.glassy-mask.visible {
+    opacity: 1;
+}

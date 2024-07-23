@@ -1,0 +1,53 @@
+/* Glow effect styles */
+
+:root {
+    --glow-animation-speed: 1.5s;
+    --glow-out-duration: 1s; /* Duration of the glow-out effect */
+    --glow-color-1: 30, 144, 255;
+    --glow-color-2: 255, 105, 180;
+    --glow-color-3: 255, 69, 0;
+    --glow-color-4: 148, 0, 211;
+}
+
+.glow {
+    animation: glow var(--glow-animation-speed) infinite;
+    opacity: 1;
+}
+
+.cut-out-text{
+    span {
+        opacity: 0; /* Ensure the initial state is without glow */
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px var(--initial-glow-color), 0 0 20px var(--initial-glow-color), 0 0 30px var(--initial-glow-color);
+    }
+    25% {
+        text-shadow: 0 0 10px rgba(var(--glow-color-2), 1), 0 0 20px rgba(var(--glow-color-2), 1), 0 0 30px rgba(var(--glow-color-2), 1);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(var(--glow-color-3), 1), 0 0 20px rgba(var(--glow-color-3), 1), 0 0 30px rgba(var(--glow-color-3), 1);
+    }
+    75% {
+        text-shadow: 0 0 10px rgba(var(--glow-color-4), 1), 0 0 20px rgba(var(--glow-color-4), 1), 0 0 30px rgba(var(--glow-color-4), 1);
+    }
+}
+
+@keyframes glow-out {
+    0% {
+        text-shadow: 0 0 10px var(--initial-glow-color), 0 0 20px var(--initial-glow-color), 0 0 30px var(--initial-glow-color);
+        opacity: 1;
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(var(--glow-color-1), 0), 0 0 20px rgba(var(--glow-color-1), 0), 0 0 30px rgba(var(--glow-color-1), 0);
+        opacity: 0;
+    }
+}
+
+.glow-out {
+    animation: glow-out var(--glow-out-duration) forwards;
+}
+
+

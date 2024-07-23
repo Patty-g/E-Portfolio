@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Div Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="grow.css">
+</head>
+<body>
+    <div class="flex flex-col h-full w-full bg-white items-center">
+        <div class="expandable">
+            <div class="bg-white shadow-lg rounded-lg h-full overflow-hidden transform transition-transform cursor-pointer" >
+                <img src="../content/bg.jpg" alt="Web Development" class="w-full h-48 object-cover max-h-40">
+                <div class="p-4">
+                    <h3 class="fade-in font-semibold text-gray-800">Web Development</h3>
+                    <p class="fade-in text-gray-600 text-sm md:text-xl">Explore my web development projects, featuring modern, responsive designs and innovative solutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="grow.js"></script>
+</body>
+</html>
