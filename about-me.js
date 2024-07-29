@@ -1,6 +1,7 @@
 $(document).ready(function () {
     console.log('hi');
 
+    // Manual visibility check function
     function checkVisibility() {
         $('.skill-holder').each(function() {
             var elementTop = $(this).offset().top;
@@ -49,16 +50,22 @@ $(document).ready(function () {
     // Swipe handling
     let startX = 0;
     let endX = 0;
+    let isSwiping = false;
 
     swiperWrapper.addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
+        isSwiping = true;
     });
 
     swiperWrapper.addEventListener('touchmove', function(e) {
+        if (!isSwiping) return;
         endX = e.touches[0].clientX;
     });
 
     swiperWrapper.addEventListener('touchend', function(e) {
+        if (!isSwiping) return;
+        isSwiping = false;
+
         if (startX > endX + 50) {
             // Swipe left
             if (currentIndex < bullets.length - 1) {
