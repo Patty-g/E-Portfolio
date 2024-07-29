@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     console.log('hi');
 
     let options = {
@@ -32,52 +31,53 @@ $(document).ready(function () {
         });
     }
 
-    //SWIPE SKILLS
+    // SWIPE SKILLS
 
     const swiperWrapper = document.querySelector('.swiper-wrapper');
-            const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+    const bullets = document.querySelectorAll('.swiper-pagination-bullet');
 
-            let currentIndex = 0;
+    let currentIndex = 0;
 
-            function updateSwiper(index) {
-                swiperWrapper.style.transform = `translateX(-${index * 100}%)`;
-                bullets.forEach(bullet => bullet.classList.remove('swiper-pagination-bullet-active'));
-                bullets[index].classList.add('swiper-pagination-bullet-active');
-                currentIndex = index;
+    function updateSwiper(index) {
+        swiperWrapper.style.transform = `translateX(-${index * 100}%)`;
+        bullets.forEach(bullet => bullet.classList.remove('swiper-pagination-bullet-active'));
+        bullets[index].classList.add('swiper-pagination-bullet-active');
+        currentIndex = index;
+    }
+
+    bullets.forEach(bullet => {
+        bullet.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            updateSwiper(index);
+        });
+    });
+
+    // Swipe handling
+    let startX = 0;
+    let endX = 0;
+
+    swiperWrapper.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+    });
+
+    swiperWrapper.addEventListener('touchmove', function(e) {
+        endX = e.touches[0].clientX;
+    });
+
+    swiperWrapper.addEventListener('touchend', function(e) {
+        if (startX > endX + 50) {
+            // Swipe left
+            if (currentIndex < bullets.length - 1) {
+                updateSwiper(currentIndex + 1);
             }
+        } else if (startX < endX - 50) {
+            // Swipe right
+            if (currentIndex > 0) {
+                updateSwiper(currentIndex - 1);
+            }
+        }
+    });
 
-            bullets.forEach(bullet => {
-                bullet.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-index'));
-                    updateSwiper(index);
-                });
-            });
-
-            // Swipe handling
-            let startX = 0;
-            let endX = 0;
-
-            swiperWrapper.addEventListener('touchstart', function(e) {
-                startX = e.touches[0].clientX;
-            });
-
-            swiperWrapper.addEventListener('touchend', function(e) {
-                endX = e.changedTouches[0].clientX;
-                if (startX > endX + 50) {
-                    // Swipe left
-                    if (currentIndex < bullets.length - 1) {
-                        updateSwiper(currentIndex + 1);
-                    }
-                } else if (startX < endX - 50) {
-                    // Swipe right
-                    if (currentIndex > 0) {
-                        updateSwiper(currentIndex - 1);
-                    }
-                }
-            });
-
-            // Initialize
-            updateSwiper(currentIndex);
-        
-
+    // Initialize
+    updateSwiper(currentIndex);
 });

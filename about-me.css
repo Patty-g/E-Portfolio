@@ -1,9 +1,7 @@
-
-hr{
+hr {
     width: 90%;
     display: none;
 }
-
 
 .button-container {
     position: absolute;
@@ -11,7 +9,7 @@ hr{
     right: 16px;
 }
 
-.about-me-profile{
+.about-me-profile {
     margin: -40px;
     margin-right: 40px;
     background-color: rgb(248, 248, 248);
@@ -19,62 +17,92 @@ hr{
     width: 40%;
     padding: 1.5rem;
     position: relative;
-
-    --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-
+    -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.shadow{
-    
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.shadow {
+    -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.about-me-links{
+.about-me-links {
     background-color: rgb(177, 177, 177);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
-    bottom: 0;  
+    bottom: 0;
     left: 0;
     gap: 1px;
-
-    button {
-        width: 50%;
-        height: 60px;
-        padding: 10px;
-        border-top: 1px solid rgb(206, 206, 206);
-    }
-
-    .left{
-        border-right: 1px solid rgb(206, 206, 206);
-    }
 }
 
-.about-me-container{
+.about-me-links button {
+    width: 50%;
+    height: 60px;
+    padding: 10px;
+    border-top: 1px solid rgb(206, 206, 206);
+}
+
+.about-me-links .left {
+    border-right: 1px solid rgb(206, 206, 206);
+}
+
+.about-me-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
     gap: 30px;
     width: 100%;
     margin-bottom: 50px;
     position: relative;
     overflow: hidden;
+    -webkit-transition: max-height 2s ease, height 2s ease;
     transition: max-height 2s ease, height 2s ease;
 }
 
-.about-me-section{
+.about-me-section {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    transition: all 2s ease
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
 }
 
-.about-me-skills{
+.about-me-skills {
     width: 100%;
     margin-bottom: 20px;
 }
 
 .about-me-info {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin: 0 auto;
     background: #fff;
@@ -85,49 +113,65 @@ hr{
     margin: 10px;
 }
 
-.about-me-wrap{
+.about-me-wrap {
     overflow: hidden;
     padding: 20px;
 }
 
-.about-me-wrap h3{
-	font-weight:bolder;
+.about-me-wrap h3 {
+    font-weight: bolder;
 }
 
-
 .about-me {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     width: 100%;
     max-width: 80%;
     height: 800px;
+    -webkit-transition: max-height 2s ease, height 2s ease;
     transition: max-height 2s ease, height 2s ease;
 }
 
-/* SKILL BAR */
-/* SKILL BAR */
 /* SKILL BAR */
 
 .bar-0 {
     width: 0px !important;
 }
 
+@-webkit-keyframes slide {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 @keyframes slide {
     0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .skill-bar {
     border-radius: 999px;
     overflow: visible;
-    animation: slide 15s linear infinite; /* Infinite looping for smooth transition */
+    -webkit-animation: slide 15s linear infinite;
+    animation: slide 15s linear infinite;
     background-size: 200% 100% !important;
+    -webkit-transition: all 1s ease-out;
     transition: all 1s ease-out;
 }
 
@@ -142,7 +186,6 @@ hr{
 .purple-bar {
     background: linear-gradient(-45deg, #6a1272, #c401ff, #c039ff, #6c0081);
 }
-
 
 .read-more-btn {
     background-color: #6b46c1;
@@ -162,9 +205,7 @@ hr{
     background-color: #553c9a;
 }
 
-/* SKILL SWIPE */
-/* SKILL SWIPE */
-/* SKILL SWIPE */
+/* SWIPE SKILLS */
 
 .swiper-container {
     position: relative;
@@ -173,33 +214,49 @@ hr{
     max-width: 600px;
     padding-top: 20px;
     padding-bottom: 20px;
-    
-    transition: all 0.3s ease, transfrom 5s ease;
+    -webkit-transition: all 0.3s ease, transform 5s ease;
+    transition: all 0.3s ease, transform 5s ease;
 }
 
 .swiper-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
-
 
 .swiper-slide {
     min-width: 100%;
     box-sizing: border-box;
 }
 
-
 .swiper-pagination {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-top: 10px;
     display: none;
     position: absolute;
     bottom: 10px;
     right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
     transform: translateX(50%);
-
 }
 
 .swiper-pagination-bullet {
@@ -214,89 +271,85 @@ hr{
 .swiper-pagination-bullet-active {
     background-color: #333;
 }
-/* SKILL SWIPE */
-/* SKILL SWIPE */
-/* SKILL SWIPE */
 
-/* RESPNSIVE */
+/* RESPONSIVE */
 
-.expanded{
-    .about-me-info{
-        max-height: none !important;
-    }
+.expanded .about-me-info {
+    max-height: none !important;
 }
 
 @media only screen and (max-width: 1300px) {
     .about-me {
+        -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
         height: auto;
     }
 
-    .about-me-profile{
-        margin: -0px;
+    .about-me-profile {
+        margin: 0;
         width: 100%;
         padding-bottom: 90px;
-        
     }
 
-    .swiper-wrapper{
+    .swiper-wrapper {
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
         flex-direction: row;
     }
 
-    .swiper-pagination{
+    .swiper-pagination {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
     }
 
-    .about-me-container{
+    .about-me-container {
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
-    .about-me-info{
+    .about-me-info {
         max-height: 600px;
     }
-
-    
 }
 
 @media only screen and (max-width: 750px) {
     .about-me-section {
-        padding: 5rem 0 ;
+        padding: 5rem 0;
     }
 
     .about-me {
         max-width: 95%;
     }
-    
-    
 }
 
 @media only screen and (max-width: 500px) {
     .about-me-container {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
         flex-direction: column;
         margin-bottom: 20px;
     }
 
-    .about-me-wrap{
+    .about-me-wrap {
         padding: 0;
     }
 
-    hr{
+    hr {
         display: block !important;
     }
 
-    .about-me{
-
-    }
-
-    .about-me-skills{
+    .about-me-skills {
         width: 100%;
     }
-    
-    .about-me-info{
+
+    .about-me-info {
         width: 95%;
     }
-
-
-    
-    
 }
