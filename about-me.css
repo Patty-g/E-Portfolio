@@ -139,6 +139,7 @@ hr {
 
 .bar-0 {
     width: 0px !important;
+    will-change: transform;
 }
 
 @-webkit-keyframes slide {
